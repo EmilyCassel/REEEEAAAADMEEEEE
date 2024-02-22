@@ -16,17 +16,17 @@ const fs = require("fs")
         //description 
         {
             type: "input", 
-            messsage: "?",//what asking 
+            messsage: "What problem did you solve?",//what asking 
             name: "description"
         },
         {
             type: "input", 
-            messsage: "?",//what asking 
+            messsage: "What was your motivation?",//what asking 
             name: "description"
         },
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            messsage: "What did you learn?",//what asking 
             name: "description"
         },
 
@@ -34,7 +34,7 @@ const fs = require("fs")
         //installation 
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            messsage: "What installations did you use?",//what asking 
             name: "installation"
         },
 
@@ -69,7 +69,7 @@ const fs = require("fs")
         //Tests
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            messsage: "What tests did you run?",//what asking 
             name: "tests"
         },
         //questions 
@@ -77,18 +77,7 @@ const fs = require("fs")
             type: "input", 
             messsage: "What is the title of your project?",//what asking 
             name: "questions"
-        },
-
-
-
-
-
-
-
-
-
-        
-        
+        },    
     ];
 
 
