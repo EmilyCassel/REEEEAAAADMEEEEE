@@ -1,6 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
-const generateMarkdown = require("./generateMarkdown.js")
+const generateMarkdown = require("./utilities/generateMarkdown")
 const fs = require("fs")
 
 
@@ -9,24 +9,24 @@ const fs = require("fs")
         //name 
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            message: "What is the title of your project?",
             name: "title"
         },
 
         //description 
         {
             type: "input", 
-            messsage: "What problem did you solve?",//what asking 
+            message: "What problem did you solve?",
             name: "description"
         },
         {
             type: "input", 
-            messsage: "What was your motivation?",//what asking 
+            message: "What was your motivation?",
             name: "description"
         },
         {
             type: "input", 
-            messsage: "What did you learn?",//what asking 
+            message: "What did you learn?",
             name: "description"
         },
 
@@ -34,7 +34,7 @@ const fs = require("fs")
         //installation 
         {
             type: "input", 
-            messsage: "What installations did you use?",//what asking 
+            message: "What installations did you use?",
             name: "installation"
         },
 
@@ -42,21 +42,21 @@ const fs = require("fs")
         //usage 
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            message: "What is the title of your project?",//what asking 
             name: "usage"
         },
 
         //contributing 
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            message: "What is the title of your project?", 
             name: "contributing"
         },
 
         //license 
         {
             type: "list", 
-            messsage: "What license do you want to use?",//what asking 
+            message: "What license do you want to use?",
             name: "license",
             choices: [
                 "MIT",
@@ -69,18 +69,24 @@ const fs = require("fs")
         //Tests
         {
             type: "input", 
-            messsage: "What tests did you run?",//what asking 
+            message: "What tests did you run?",
             name: "tests"
         },
         //questions 
         {
             type: "input", 
-            messsage: "What is the title of your project?",//what asking 
+            message: "Anything else about this application you would like to add?", 
             name: "questions"
         },    
+        {
+            type: "input", 
+            message: "What is your email address?",
+            name: "contact information"
+        },   
+        
     ];
 
-
+/*
 function askQuestion(){
     let answer = [];
 
@@ -94,22 +100,20 @@ function askQuestion(){
 let userIdea = askQuestion();
 
 for( var i =0; i <userIdea.length; i++)
-
+*/
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     let markdownInformation = generateMarkdown(data);
 
-    fs.writefile(fileName, markdownInformation, (err) => {
+    fs.writeFile(fileName, markdownInformation, (err) => {
         if (err){
             return console.log(err)
         } 
         console.log("Success")
     })
 }
-
-
-writeToFile();
+ 
 
 // TODO: Create a function to initialize app
 function init() {
